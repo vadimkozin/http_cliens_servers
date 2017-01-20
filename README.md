@@ -1,8 +1,3 @@
-"name": "http_cliens_servers",
-  "version": "0.0.1",
-  "description": "Create clients and servers using the http module",
-  "main": "index.js",
-
 ###Homework "Create clients and servers using the http module".
 
 used:
