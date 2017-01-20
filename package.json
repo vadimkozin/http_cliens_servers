@@ -1,0 +1,11 @@
+{
+  "name": "http_cliens_servers",
+  "version": "0.0.1",
+  "description": "Create clients and servers using the http module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vadim Kozin",
+  "license": "MIT"
+}
