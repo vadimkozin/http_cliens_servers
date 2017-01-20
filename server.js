@@ -10,6 +10,7 @@ const querystring = require('querystring');
 const http = require('http');
 const { SecretKey } = require('./key');
 const PORT = process.env.PORT || 3000;
+const document_api = 'http://netology.tomilomark.ru/doc/#api-ND'
 
 function parse(data, req) {
     const method = req.method;
@@ -44,9 +45,15 @@ function handler(req, res) {
         req.on('error', (e) => console.log(e));
         req.on('end', () => {
             data = parse(data, req);
-            data.firstName = data.firstName || 'NO param firstName!'; 
-            data.lastName = data.lastName || 'NO param lastName!'; 
-        
+
+            if (!(data.firstName && data.lastName)) {
+                res.writeHead(400, 'ERREQUEST', {'Content-Type': 'text/json'}); 
+                res.write(`{"message":"incorrect request, see: ${document_api}"}`);
+                res.end();
+                console.log(`incorrect request, see: ${document_api}`);
+                return;                
+            } 
+
             let key = new SecretKey(firstName=data.firstName, lastName=data.lastName);
             key.on('key.done', () => {
                 console.log(key.result);
