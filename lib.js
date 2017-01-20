@@ -13,7 +13,7 @@ options = {
  * Простая проверка введённых параметров в командной строке 
  * параметры ожидаются в длинной форме: --param1=value2 --param2=value2
  * @param {Array} param - массив параметров из ком.строки
- * @param {Object} abc  - объект с ожидаемыми параметрами (abc.filed1=null, ..)
+ * @param {Object} abc  - объект с ожидаемыми параметрами (abc.param1=null, abc.param2=null, ..)
  * @return true|false - есть ли в param ожидаемые параметры и заполненный abc 
 */
  
